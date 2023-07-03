@@ -1,0 +1,22 @@
+{
+  "name": "Vigilante de Emails",
+  "description": "Extensão que faz a leitura da página atual e localiza emails pré definidos na base de dados, exibindo um alerta caso o email for encontrado",
+  "version": "1.0",
+  "permissions": [
+    "downloads",
+    "fileSystem"
+  ],
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "main.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"]
+    }
+  ]
+}
